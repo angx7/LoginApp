@@ -6,4 +6,12 @@
     <string name="label_password">Password</string>
     <string name="placeholder_password">********</string>
     <string name="create_account">"Don't have any account? Sign Up"</string>
+    <string name="have_account">"Already have any account? Sign In"</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="Create_account">Create Account</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="first_name_placeholder">Samantha Daniela</string>
+    <string name="last_name_placeholder">Perez Perez</string>
 </resources>
