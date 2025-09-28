@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">LoginApp</string>
+    <string name="title_activity_main">Login</string>
+    <string name="label_email">Email</string>
+    <string name="placeholder_email">ejemplo@gmail.com</string>
+    <string name="label_password">Password</string>
+    <string name="placeholder_password">********</string>
+    <string name="create_account">"Don't have any account? Sign Up"</string>
 </resources>

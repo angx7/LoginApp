@@ -1,6 +1,7 @@
 package com.example.loginapp.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,7 +18,6 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -28,6 +28,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.loginapp.R
@@ -35,6 +37,7 @@ import com.example.loginapp.components.CustomButton
 import com.example.loginapp.components.TextFieldOculto
 import com.example.loginapp.components.TextFieldPerso
 import com.example.loginapp.ui.theme.Github
+import com.example.loginapp.ui.theme.RegisterScreenRoute
 
 @Composable
 fun LoginScreen(navController: NavController, innePadding: PaddingValues) {
@@ -93,34 +96,43 @@ fun LoginScreen(navController: NavController, innePadding: PaddingValues) {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ){
                     Text(
-                        text = "Login",
+                        text = stringResource(R.string.title_activity_main),
                         style = MaterialTheme.typography.titleLarge,
                         color = Color.Black,
                         modifier = Modifier.padding(bottom = 28.dp)
                     )
                     // Email Input
                     TextFieldPerso(
-                        text = "Email",
+                        text = stringResource(R.string.label_email),
                         value = email,
                         onValueChange = { email = it },
-                        placeholder = "ejemplo@gmail.com"
+                        placeholder = stringResource(R.string.placeholder_email)
                     )
 
                     // Password Input
                     TextFieldOculto(
-                        text = "Password",
+                        text = stringResource(R.string.label_password),
                         value = password,
                         onValueChange = { password = it },
                         showPassword = passwordVisibility,
+                        placeholder =stringResource(R.string.placeholder_password),
                         onShowPasswordChange = { passwordVisibility = !passwordVisibility }
                     )
 
                     // Login Button
-                    CustomButton("Login")
+                    CustomButton(stringResource(R.string.title_activity_main))
 
-                    Spacer(modifier = Modifier.height(20.dp))
+                    Spacer(modifier = Modifier.weight(0.3f))
 
                     // Register Button
+                    Text(
+                        text = stringResource(R.string.create_account),
+                        color = Color.Black,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.clickable {
+                            navController.navigate(RegisterScreenRoute)
+                        }
+                    )
 
                 }
             }

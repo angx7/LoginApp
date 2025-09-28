@@ -14,6 +14,7 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.Placeable
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -29,6 +30,7 @@ fun TextFieldOculto(
     value : String,
     onValueChange : (String) -> Unit,
     showPassword : Boolean,
+    placeholder: String,
     onShowPasswordChange: () -> Unit
 ){
     TextField(
@@ -36,6 +38,7 @@ fun TextFieldOculto(
         onValueChange = onValueChange,
         shape = RoundedCornerShape(16.dp),
         label = { Text(text = text, color = Color.Black) },
+        placeholder = { Text(placeholder, color = Color.LightGray) },
         singleLine = true,
         trailingIcon = {
             IconButton(onClick = onShowPasswordChange) {
